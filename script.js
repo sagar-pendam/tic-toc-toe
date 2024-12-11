@@ -244,7 +244,7 @@ function playerChosen() {
 
                            
                             location.reload()
-                        }, 2000)
+                        }, 4000)
                     }
                 }
                 if (!win) {
