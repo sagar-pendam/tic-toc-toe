@@ -66,25 +66,25 @@ for (let index = 0; index < arr.length; index++) {
 
 //Adding event listener on boxes
 // Check if "score" already exists in localStorage
-if (localStorage.getItem("win") === null) {
+if (localStorage.getItem("win1") === null) {
     // If "score" does not exist, set it to a default value (e.g., 0)
-    localStorage.setItem("win", "0");
+    localStorage.setItem("win1", "0");
     console.log("Score initialized to 0");
   } else {
-    let getScore = localStorage.getItem("win")
+    let getScore = localStorage.getItem("win1")
 
 let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML = getScore;
-    console.log("Score already exists:", localStorage.getItem("win"));
+    console.log("Score already exists:", localStorage.getItem("win1"));
   }
-  if (localStorage.getItem("loss") === null) {
+  if (localStorage.getItem("loss1") === null) {
     
-    localStorage.setItem("loss", "0");
+    localStorage.setItem("loss1", "0");
     console.log("Score initialized to 0");
   } else {
-    let getScore = localStorage.getItem("loss")
+    let getScore = localStorage.getItem("loss1")
 
 let scoreLoss = document.getElementsByClassName("scoreLoss")[0].innerHTML = getScore;
-    console.log("Score already exists:", localStorage.getItem("loss"));
+    console.log("Score already exists:", localStorage.getItem("loss1"));
   }
 
 
@@ -224,9 +224,9 @@ function playerChosen() {
                         // let getScore = localStorage.getItem("win")
 
                         // let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML = getScore;
-                        let currentScore = parseInt(localStorage.getItem("win"));
+                        let currentScore = parseInt(localStorage.getItem("win1"));
                         currentScore+=1;
-                        localStorage.setItem("win",currentScore)
+                        localStorage.setItem("win1",currentScore)
                          let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML=currentScore
                         let gameContainer = document.getElementsByClassName("gameContainer")[0]
                         gameContainer.style.filter = "blur(5px)";
@@ -485,14 +485,19 @@ function playerChosen() {
                                 gameContainer.style.filter = "blur(5px)";
                                 let matchLoss = document.getElementsByClassName("matchLoss")[0];
                                 matchLoss.style.display = "flex"
+                                let currentScore = parseInt(localStorage.getItem("loss1"));
+                                currentScore+=1;
+                                localStorage.setItem("loss1",currentScore)
+                                 let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML=currentScore
                                 let player1 = document.getElementsByClassName("player1")[0];
                                 player1.innerHTML = player;
                                 let resultShow = document.getElementsByClassName("resultShow")[0];
+                                 resultShow.style.display = "flex"
                                 resultShow.style.animationPlayState = "running";
                                 setTimeout(() => {
-                                    let currentScore = parseInt(localStorage.getItem("loss"));
-                        currentScore+=1;
-                        localStorage.setItem("loss",currentScore)
+                        //             let currentScore = parseInt(localStorage.getItem("loss"));
+                        // currentScore+=1;
+                        // localStorage.setItem("loss",currentScore)
                          let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML=currentScore
                                     location.reload()
                                 }, 2000)
@@ -519,9 +524,13 @@ function playerChosen() {
                     matchTie.style.display = "flex"
 
                     let resultShow = document.getElementsByClassName("resultShow")[0];
+                     resultShow.style.display = "flex"
                     resultShow.style.animationPlayState = "running";
                     // alert("you Tie")
-                    location.reload()
+                    setTimeout(() => {
+                        location.reload()
+                    }, 2000);
+                    
                 }
 
             }
