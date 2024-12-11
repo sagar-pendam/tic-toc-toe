@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./input.css">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+TZ+Guides&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=trophy" />
+</head>
+<style>
+ 
+</style>
+
+<body>
+
+
+  <div class="flex items-center justify-center  flex-col  gap-12 -mt-36 main relative top-0  z-20 ">
+    <h1 class="text-cyan-500 text-6xl text-center chose">Choose One</h1>
+    <div class="flex items-center gap-14 flex-wrap justify-center">
+
+
+      <button type="button"
+        class="bg-red-500 text-white px-4 py-2 rounded-full shadow-2xl shodow-red-500/50 font-bold w-36 hover:bg-red-400 btn o">O</button>
+      <button type="button"
+        class="bg-green-500 text-white px-4 py-2 rounded-full font-bold w-36 shadow-2xl shodow-green-500/50 hover:bg-green-400 btn x">X</button>
+    </div>
+  </div>
+  <div class="resultShow relative z-50 hidden items-center justify-center">
+    <div class=" items-center justify-center matchWin hidden">You Win - <span class="player1">O</span></div>
+    <div class=" items-center justify-center matchLoss hidden">You Loss - <span class="player1">O</span></div>
+    <div class=" items-center justify-center matchTie hidden">Match Tie</div>
+  </div>
+  <main class="flex items-center justify-center absolute top-0 z-10 bg-slate-500 w-full h-full blur-sm gameContainer flex-col ">
+    <div class="container flex items-center justify-center flex-shrink flex-col">
+      <div class="flex">
+        <div id="1" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52 border-r-2 border-gray-600 rounded-sm "></div>
+        <div id="2" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52 border-r-2 border-gray-600 rounded-sm"></div>
+        <div id="3" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52 border-gray-600 rounded-sm"></div>
+
+      </div>
+
+      <div class="flex">
+        <div id="4" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52 border-r-2 border-gray-600 rounded-sm border-t-2"></div>
+        <div id="5" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52 border-r-2 border-gray-600 rounded-sm border-t-2"></div>
+        <div id="6" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52  border-gray-600 rounded-sm border-t-2"></div>
+      </div>
+      <div class="flex">
+        <div id="7" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52 border-r-2 border-gray-600 rounded-sm border-t-2"></div>
+        <div id="8" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52 border-r-2 border-gray-600 rounded-sm border-t-2"></div>
+        <div id="9" class="box text-center flex items-center justify-center text-2xl sm:text-6xl font-semibold  w-24 sm:w-52 h-32  sm:h-52  border-gray-600 rounded-sm border-t-2"></div>
+      </div>
+
+    </div>
+
+    <div class="mt-16">
+      <button type="button"
+        class="bg-green-500 text-white px-4 py-2 rounded-full font-bold w-36 shadow-2xl shodow-green-500/50 hover:bg-green-400 btn mx-auto" id="restartButton">Restart</button>
+    </div>
+    </div>
+  </main>
+  <footer class="fixed bottom-0 flex justify-around items-center z-40 w-[100%]">
+    <div class="flex items-center flex-col justify-center" ><h1 class="text-gray-800">Win </h1><span  class="text-gray-800 scoreWin">0</span></div>
+  
+    <div class="flex items-center flex-col justify-center"><h1 class="text-gray-800">Loss </h1><span class="text-gray-800 scoreLoss">0</span></div>
+  </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

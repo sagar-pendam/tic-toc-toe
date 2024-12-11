@@ -1,0 +1,38 @@
+h1,div,span{
+          font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+     
+      
+  }
+  h1{
+    color: white;
+  }
+  div{
+    color: rgb(53 53 53);
+};
+span
+{
+ color: white;
+}
+
+.resultShow{
+   animation: 2s ease-in  1 forwards paused  slide-in; 
+}
+
+@keyframes slide-in{
+    0%{
+       
+        font-size: 16px;
+        opacity: 0.1;
+        top: 50px;
+       
+    }
+    100%{
+        font-size: 50px;
+        opacity: 1.1;
+        top: 210px;
+    }
+}
+  
+  
