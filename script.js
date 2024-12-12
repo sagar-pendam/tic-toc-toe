@@ -34,7 +34,7 @@ for (let index = 0; index < arr.length; index++) {
             if (btn.contains("x")) {
                 player = 'X'
                 comp = "O"
-                
+
             }
             else if (btn.contains("o")) {
                 player = 'O'
@@ -70,22 +70,22 @@ if (localStorage.getItem("win1") === null) {
     // If "score" does not exist, set it to a default value (e.g., 0)
     localStorage.setItem("win1", "0");
     console.log("Score initialized to 0");
-  } else {
+} else {
     let getScore = localStorage.getItem("win1")
 
-let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML = getScore;
+    let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML = getScore;
     console.log("Score already exists:", localStorage.getItem("win1"));
-  }
-  if (localStorage.getItem("loss1") === null) {
-    
+}
+if (localStorage.getItem("loss1") === null) {
+
     localStorage.setItem("loss1", "0");
     console.log("Score initialized to 0");
-  } else {
+} else {
     let getScore = localStorage.getItem("loss1")
 
-let scoreLoss = document.getElementsByClassName("scoreLoss")[0].innerHTML = getScore;
+    let scoreLoss = document.getElementsByClassName("scoreLoss")[0].innerHTML = getScore;
     console.log("Score already exists:", localStorage.getItem("loss1"));
-  }
+}
 
 
 let winScore = 0
@@ -225,13 +225,18 @@ function playerChosen() {
 
                         // let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML = getScore;
                         let currentScore = parseInt(localStorage.getItem("win1"));
-                        currentScore+=1;
-                        localStorage.setItem("win1",currentScore)
-                         let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML=currentScore
-                        let gameContainer = document.getElementsByClassName("gameContainer")[0]
+                        currentScore += 1;
+                        localStorage.setItem("win1", currentScore)
+                        let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML = currentScore
+                        
+                        setTimeout(() => {
+                            let gameContainer = document.getElementsByClassName("gameContainer")[0]
                         gameContainer.style.filter = "blur(5px)";
-                        let matchWin = document.getElementsByClassName("matchWin")[0];
+                            let matchWin = document.getElementsByClassName("matchWin")[0];
                         matchWin.style.display = "flex"
+                        matchWin.style.opacity = "1.1"
+                        matchWin.style.transition = "all 2s"
+                        }, 2000);
                         let player1 = document.getElementsByClassName("player1")[0];
                         player1.innerHTML = player;
 
@@ -239,17 +244,17 @@ function playerChosen() {
                         let resultShow = document.getElementsByClassName("resultShow")[0];
                         resultShow.style.display = "flex"
                         resultShow.style.animationPlayState = "running";
-                        
+
                         setTimeout(() => {
 
-                           
+
                             location.reload()
                         }, 4000)
                     }
                 }
                 if (!win) {
                     setTimeout(() => {
-                       
+
 
                         occupiedByPlayer.sort((a, b) => a - b);
                         count1 += 1
@@ -481,26 +486,38 @@ function playerChosen() {
 
                             if (loss) {
                                 // alert("You Loss")
-                                let gameContainer = document.getElementsByClassName("gameContainer")[0]
+                                
+                                // let matchLoss = document.getElementsByClassName("matchLoss")[0];
+                                // matchLoss.style.display = "flex"
+                                // matchLoss.style.opacity = "1.1"
+                                // matchLoss.style.transition = "all 2s"
+                                setTimeout(() => {
+                                    let gameContainer = document.getElementsByClassName("gameContainer")[0]
                                 gameContainer.style.filter = "blur(5px)";
-                                let matchLoss = document.getElementsByClassName("matchLoss")[0];
-                                matchLoss.style.display = "flex"
+                                    let matchLoss = document.getElementsByClassName("matchLoss")[0];
+                                    matchLoss.style.display = "flex"
+                                matchLoss.style.opacity = "1.1"
+                                matchLoss.style.transition = "all 2s"
+                                }, 2000);
                                 let currentScore = parseInt(localStorage.getItem("loss1"));
-                                currentScore+=1;
-                                localStorage.setItem("loss1",currentScore)
-                                 let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML=currentScore
+                                currentScore += 1;
+                                localStorage.setItem("loss1", currentScore)
+                                let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML = currentScore
                                 let player1 = document.getElementsByClassName("player1")[0];
                                 player1.innerHTML = player;
                                 let resultShow = document.getElementsByClassName("resultShow")[0];
-                                 resultShow.style.display = "flex"
+                                resultShow.style.display = "flex"
                                 resultShow.style.animationPlayState = "running";
+                                let getScore = localStorage.getItem("loss1")
+
+    let scoreLoss = document.getElementsByClassName("scoreLoss")[0].innerHTML = getScore;
                                 setTimeout(() => {
-                        //             let currentScore = parseInt(localStorage.getItem("loss"));
-                        // currentScore+=1;
-                        // localStorage.setItem("loss",currentScore)
-                         let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML=currentScore
+                                    //             let currentScore = parseInt(localStorage.getItem("loss"));
+                                    // currentScore+=1;
+                                    // localStorage.setItem("loss",currentScore)
+                                    let scoreWin = document.getElementsByClassName("scoreWin")[0].innerHTML = currentScore
                                     location.reload()
-                                }, 2000)
+                                }, 4000)
                             }
 
                         }
@@ -518,19 +535,25 @@ function playerChosen() {
                 console.log("count:" + count);
                 console.log("count1:" + count1);
                 if (count == 5 & count1 == 4 && !(win) && !(loss)) {
-                    let gameContainer = document.getElementsByClassName("gameContainer")[0]
-                    gameContainer.style.filter = "blur(5px)";
-                    let matchTie = document.getElementsByClassName("matchTie")[0];
-                    matchTie.style.display = "flex"
-
+                   
+                    
+                    setTimeout(() => {
+                        let gameContainer = document.getElementsByClassName("gameContainer")[0]
+                        gameContainer.style.filter = "blur(5px)";
+                        let matchTie = document.getElementsByClassName("matchTie")[0];
+                        matchTie.style.display = "flex"
+                    matchTie.style.opacity = "1.1"
+                    matchTie.style.transition = "all 2s"
+                    }, 2000);
+                    
                     let resultShow = document.getElementsByClassName("resultShow")[0];
-                     resultShow.style.display = "flex"
+                    resultShow.style.display = "flex"
                     resultShow.style.animationPlayState = "running";
                     // alert("you Tie")
                     setTimeout(() => {
                         location.reload()
-                    }, 2000);
-                    
+                    }, 4000);
+
                 }
 
             }
